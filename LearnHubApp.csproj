@@ -7,7 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Views\FormationsClient\" />
     <Folder Include="Views\CategoriesClient\" />
   </ItemGroup>
 

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
-using LearnHubApp.Models; // Assuming BookClient is defined in this namespace
+using LearnHubApp.Models; 
 
 namespace LearnHubApp.Controllers
 {
@@ -17,11 +17,14 @@ namespace LearnHubApp.Controllers
 
         public async Task<ActionResult> GetAllFormations()
         {
-            HttpClient client = new HttpClient();
-            client.BaseAddress = new Uri("https://localhost:7249");
+            HttpClient client = new()
+            {
+                BaseAddress = new Uri("https://localhost:7070")
+            };
+
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-            HttpResponseMessage response = await client.GetAsync("api/Books/get-all-formations");
+            HttpResponseMessage response = await client.GetAsync("api/Formations/get-all-formations");
 
             if (response.IsSuccessStatusCode)
             {

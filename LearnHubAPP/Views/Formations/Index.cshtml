@@ -1,0 +1,84 @@
+﻿@model IEnumerable<LearnHubAPP.Models.Formation>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NomFormation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Duree)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Prix)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ImgFormationPath)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Categorie.NomCategorie)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Formateur.Nom)
+            </th>
+            <th>
+                Modules
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NomFormation)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Duree)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Prix)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ImgFormationPath)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Categorie.NomCategorie)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Formateur.Nom)
+                </td>
+                <td>
+                    <ul>
+                        @foreach (var module in item.Modules)
+                        {
+                            <li>@module.NomModule</li>
+
+                        }
+                    </ul>
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.IdFormation">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.IdFormation">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.IdFormation">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
