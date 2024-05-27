@@ -1,4 +1,5 @@
 using LearnHubAPP.Models;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,7 +11,10 @@ builder.Services.AddDbContext<LearnHubDbContext>(
 options => options.UseSqlServer(
 builder.Configuration.GetConnectionString("LearnHubConnection")
 ));
-
+//add Identity service
+builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = false)
+    .AddRoles<IdentityRole>() //add roles
+    .AddEntityFrameworkStores<LearnHubDbContext>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -25,7 +29,8 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
-
+//////
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllerRoute(

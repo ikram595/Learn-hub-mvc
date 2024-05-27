@@ -1,8 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 
 namespace LearnHubAPP.Models
 {
-    public class LearnHubDbContext : DbContext
+    public class LearnHubDbContext : IdentityDbContext
     {
         public DbSet<Formation>? Formations { get; set; }
         public DbSet<Formateur>? Formateurs { get; set; }

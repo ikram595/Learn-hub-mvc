@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "E:\\LearnHubAPP\\LearnHubAPP\\LearnHubAPP.csproj": {}
+    "C:\\Users\\ikram\\OneDrive\\Desktop\\learnHub\\Learn-hub-mvc\\LearnHubAPP\\LearnHubAPP.csproj": {}
   },
   "projects": {
-    "E:\\LearnHubAPP\\LearnHubAPP\\LearnHubAPP.csproj": {
+    "C:\\Users\\ikram\\OneDrive\\Desktop\\learnHub\\Learn-hub-mvc\\LearnHubAPP\\LearnHubAPP.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\LearnHubAPP\\LearnHubAPP\\LearnHubAPP.csproj",
+        "projectUniqueName": "C:\\Users\\ikram\\OneDrive\\Desktop\\learnHub\\Learn-hub-mvc\\LearnHubAPP\\LearnHubAPP.csproj",
         "projectName": "LearnHubAPP",
-        "projectPath": "E:\\LearnHubAPP\\LearnHubAPP\\LearnHubAPP.csproj",
-        "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-        "outputPath": "E:\\LearnHubAPP\\LearnHubAPP\\obj\\",
+        "projectPath": "C:\\Users\\ikram\\OneDrive\\Desktop\\learnHub\\Learn-hub-mvc\\LearnHubAPP\\LearnHubAPP.csproj",
+        "packagesPath": "C:\\Users\\ikram\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ikram\\OneDrive\\Desktop\\learnHub\\Learn-hub-mvc\\LearnHubAPP\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ikram\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -40,6 +40,14 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Microsoft.AspNetCore.Identity.UI": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[6.0.29, )"
@@ -78,7 +86,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
         }
       }
     }
