@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -12,10 +14,14 @@ namespace LearnHubAPP.Controllers
     public class FormationsController : Controller
     {
         private readonly LearnHubDbContext _context;
+        private readonly UserManager<IdentityUser> _userManager;
+        private readonly RoleManager<IdentityRole> _roleManager;
 
-        public FormationsController(LearnHubDbContext context)
+        public FormationsController(LearnHubDbContext context, UserManager<IdentityUser> userManager, RoleManager<IdentityRole> roleManager)
         {
             _context = context;
+            _userManager = userManager;
+            _roleManager = roleManager;
         }
 
         // GET: Formations
@@ -24,7 +30,7 @@ namespace LearnHubAPP.Controllers
             var learnHubDbContext = _context.Formations.Include(f => f.Categorie).Include(f => f.Formateur).Include(f => f.Modules);
             return View(await learnHubDbContext.ToListAsync());
         }
-
+        [Authorize]
         // GET: Formations/Details/5
         public async Task<IActionResult> Details(int? id)
         {
@@ -45,6 +51,7 @@ namespace LearnHubAPP.Controllers
             return View(formation);
         }
 
+        [Authorize(Roles = "Admin,Formateur")]
         // GET: Formations/Create
         public IActionResult Create()
         {
@@ -70,7 +77,7 @@ namespace LearnHubAPP.Controllers
             ViewData["IdFormateur"] = new SelectList(_context.Formateurs, "Id", "Nom", formation.IdFormateur);
             return View(formation);
         }
-
+        [Authorize(Roles = "Admin,Formateur")]
         // GET: Formations/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
@@ -123,7 +130,7 @@ namespace LearnHubAPP.Controllers
             ViewData["IdFormateur"] = new SelectList(_context.Formateurs, "Id", "Nom", formation.IdFormateur);
             return View(formation);
         }
-
+        [Authorize(Roles = "Admin,Formateur")]
         // GET: Formations/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
