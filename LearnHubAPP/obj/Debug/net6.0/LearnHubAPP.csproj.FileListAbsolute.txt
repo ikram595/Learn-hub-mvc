@@ -555,3 +555,8 @@ C:\Users\ikram\OneDrive\Desktop\learnHub\Learn-hub-mvc\LearnHubAPP\obj\Debug\net
 C:\Users\ikram\OneDrive\Desktop\learnHub\Learn-hub-mvc\LearnHubAPP\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 C:\Users\ikram\OneDrive\Desktop\learnHub\Learn-hub-mvc\LearnHubAPP\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.UI.dll
 C:\Users\ikram\OneDrive\Desktop\learnHub\Learn-hub-mvc\LearnHubAPP\obj\Debug\net6.0\LearnHubAPP.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\ikram\OneDrive\Desktop\learnHub\Learn-hub-mvc\LearnHubAPP\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\ikram\OneDrive\Desktop\learnHub\Learn-hub-mvc\LearnHubAPP\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\ikram\OneDrive\Desktop\learnHub\Learn-hub-mvc\LearnHubAPP\bin\Debug\net6.0\Microsoft.Extensions.FileProviders.Embedded.dll
+C:\Users\ikram\OneDrive\Desktop\learnHub\Learn-hub-mvc\LearnHubAPP\bin\Debug\net6.0\Microsoft.Extensions.Identity.Core.dll
+C:\Users\ikram\OneDrive\Desktop\learnHub\Learn-hub-mvc\LearnHubAPP\bin\Debug\net6.0\Microsoft.Extensions.Identity.Stores.dll
