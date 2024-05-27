@@ -120,6 +120,11 @@ namespace LearnHubAPP.Areas.Identity.Pages.Account
 
                 if (result.Succeeded)
                 {
+                    //verifier utilisateur inscrit <>admin
+                    if (!_userManager.IsInRoleAsync(user, "Admin").Result)
+                    {//role "Participant" attribué par defaut au utilisateur inscrit  
+                        await _userManager.AddToRoleAsync(user, "Apprenant");
+                    }
                     _logger.LogInformation("User created a new account with password.");
 
                     var userId = await _userManager.GetUserIdAsync(user);
