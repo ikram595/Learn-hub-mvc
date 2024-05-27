@@ -38,5 +38,43 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Index}/{id?}");
 //identity routing
 app.MapRazorPages();
+//add roles 
+using (var scope = app.Services.CreateScope())
+{
+    var roleManager =
+        scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+
+    var roles = new[] { "Admin", "Formateur", "Apprenant" };
+    foreach (var role in roles)
+    {
+        if (!await roleManager.RoleExistsAsync(role))
+            await roleManager.CreateAsync(new IdentityRole(role));
+    }
+
+
+
+    var userManager =
+        scope.ServiceProvider.GetRequiredService<UserManager<IdentityUser>>();
+
+    //compte admin
+    string email = "admin2@admin.com";
+    string password = "Admin@admin123";
+    //creation du compte admin si utilisateur "Admin" not found
+    if (await userManager.FindByEmailAsync(email) == null)
+    {
+        var user = new IdentityUser();
+        user.UserName = email;
+        user.Email = email;
+        await userManager.CreateAsync(user, password);
+        //cet utilisateur a le role "Admin"
+        await userManager.AddToRoleAsync(user, "Admin");
+
+
+
+    }
+
+
+
+}
 
 app.Run();
